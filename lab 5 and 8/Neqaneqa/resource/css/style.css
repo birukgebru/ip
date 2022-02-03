@@ -1,0 +1,350 @@
+/* ----------- General -------------- */
+
+/* @import url("import_test.css");   <--this is just to show how you  can itegrate files together */
+* {
+    margin: 0;
+}
+
+:root {
+    --primary-dark: rgb(37, 36, 36);
+    --primary-white: rgb(245, 245, 245);
+    --box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+}
+
+body {
+    background-color: var(--primary-white);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    overflow-x: hidden;
+}
+.wrapper{
+   width: 90%;
+   position: relative;
+   margin: auto;
+   padding: 90px 0;
+}
+.section_heading{
+    margin: 50px 0 10px 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    margin: 10px auto;
+    font-family: sans-serif;
+}
+
+p {
+    color: rgb(70, 70, 70);
+    line-height: 25px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ----------- Navigation -------------- */
+
+.brand {
+    float: left;
+    height: auto;
+    /* clear: both; */
+    /* border: 1px solid; */
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    width: 100%;
+    float: left;
+    display: block;
+    position: fixed;
+    clear: both;
+    z-index: 3;
+    box-shadow: var(--box-shadow);
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header li a {
+    display: block;
+    padding: 10px 10px;
+    margin: 10px 0 10px 0;
+    border-right: 1px solid var(--primary-white);
+    text-decoration: none;
+    color: var(--primary-dark); 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all .2s ease-out;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--primary-white);
+}
+
+.header .brand .logo img {
+    display: block;
+    float: left;
+    width: 40px;
+    height: auto;
+    padding: 10px 20px;
+}
+
+.header .nav-menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block; 
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none; 
+}
+
+
+.header .menu-icon .navicon {
+    background: var(--primary-dark);
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: var(--primary-dark);
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked~.nav-menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg); 
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before,
+.header .menu-btn:checked~.menu-icon .navicon:after {
+    top: 0;
+}
+/* make the menu device responsive */
+@media (min-width: 720px) {
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 20px 20px;
+    }
+
+    .header .nav-menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+/* -------------Content and Footer-------------- */
+.main-content{
+    float: left;
+    clear: both;
+    position: relative;
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+.footer p{
+    display: inline;
+}
+.footer {
+    float: left;
+    display: block;
+    clear: both;
+    position: relative;
+    background-color: white;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 20px;
+    width: 100%; 
+    text-align: center;
+}
+.content{
+    width: 76%;
+    float: left;
+    position: relative;
+    padding: 20px;
+}
+.side-bar{
+    width: 19%;
+    float: left;
+    padding-top: 10px;
+    position: relative;
+}
+
+@media(max-width: 720px){
+    .main-content{
+      flex-direction: column;
+    }
+    .content{
+        width: 100%;
+    }
+    .side-bar{
+        padding-left: 10px;
+        width: 100%;
+    }
+}
+
+/* ------------Slider -------- */
+
+.slider-wrappeer{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+@media(max-width: 720px){
+    .slider-wrappeer{
+        height: 200px;
+    }
+}
+
+.slide-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.title{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(245, 245, 245, .5);
+}
+
+
+
+/* ------------------ card --------------- */
+.card_wrapper{
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 10px;
+    transition: 0.3s;
+    width: 31%;
+    float: left;
+    clear: right;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-body {
+    padding: 2px 16px;
+  }
+/* media responsivness is your exercise assignment */
+
+
+
+/*------- styling form  ------*/
+.register{
+    background-color: white; 
+    width: 420px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    box-shadow: 0 0 5px 0 var(--primary-dark);
+}
+
+.error{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    color: red;
+    font-style: italic;
+}
+
+form {
+    margin: 0 auto;
+    /* border: 1px solid; */
+}
+
+input[type=password], input[type=text], input[type=tel], input[type=email] {
+    margin-bottom: 5px;
+    padding: 15px;
+    width: 90%;
+    border: 1px solid #CCC
+}
+input[type=file] {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 90%;
+    border: 1px solid #CCC
+}
+
+select {
+    margin-bottom: 5px;
+    padding: 15px;
+    width: 90%;
+    border: 1px solid #CCC
+}
+
+button {
+    padding: 10px
+}
+
+ul li{
+    list-style: none;
+}

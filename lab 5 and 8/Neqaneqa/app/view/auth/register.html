@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../resource/css/style.css">
+    <script src="../../../resource/js/form.js"></script>
+</head>
+<body onload="name()">
+    <div class="register">
+        <h1>REGISTER</h1>
+        already have account? <a href="login.html">login her</a><br><br>
+        
+        <form name="register" action="../../controllers/register.php" autocomplete="off" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <input type="text" id="name" name="name"  maxlength="50" placeholder="Full Name">
+            <span class="error" id="name_error"></span>
+            <input type="tel" id="phone" name="phone"  pattern="[0-9]{3} [0-9]{3}" placeholder="Phone"> 
+            <input type="number" id="age"  name="age" placeholder="Age"> 
+            <label for="birthdate">Birthdate: </label>
+            <input type="date" id="birthdate" name="birthdate" style="width: auto;" placeholder="placeholder"> 
+            <br>
+            <label>Gender: </label>
+            <label for="f">Female <input type="radio" style="width: auto;" name="gender" id="f"></label>
+            <label for="m"> Male <input type="radio" style="width: auto;" name="gender" id="m"></label>
+            
+            <input type="password" id="password" name="password"  placeholder="Password">
+            <span class="error" id="password_error"></span>
+            <input type="password" id="confirm" name="confirm_password"  placeholder="Confirm Password">
+            <label for="skill">Skills</label>
+            <ul>
+                <li>  <label for="html" ><input type="checkbox" name="html" id="html" style="width: auto;"> HTML</label> </li>
+                <li> <label for="css" ><input type="checkbox" name="css" id="css" style="width: auto;"> CSS</label> </li>
+                <li> <label for="js" > <input type="checkbox" name="js" id="js" style="width: auto;"> JavaScript</label> </li>
+                <li> <label for="php" > <input type="checkbox" name="php" id="php" style="width: auto;"> PHP</label> </li>
+            </ul>
+            
+            <label for="country">Country</label> <br>
+            <select name="country" id="country">
+                <option value="et">Ethiopia</option>
+                <option value="kn">Kenya</option>
+                <option value="sa">South Africa</option>
+                <option value="sa">Senegal</option>
+            </select> <br>
+            <label for="photo">Photo</label> <br>
+            <input type="file" id="photo" name="photo"> <br>
+            <label for="aboutme">Describe Yourserlf</label> <br>
+            <textarea name="aboutme" id="aboutme" cols="50" rows="10"></textarea> <br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

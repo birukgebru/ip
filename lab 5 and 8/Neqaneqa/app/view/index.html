@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neqaneqa</title>
+    <link rel="stylesheet" href="../../resource/css/style.css">
+    <script>
+        slide_images = new Array('../../resource/image/banners/life1.jpg', '../../resource/image/banners/coding.jpg',
+            '../../resource/image/banners/steve.jpg')
+        title = new Array('ERIC HOFFER AND THE POWER OF SELF-EDUCATION', 'Coding ...', "Steve Jobs");
+        links = new Array('articles.html', '#article', '#ideas')
+        banner = 0
+
+        function ShowLinks() {
+            document.location.href = "http://www." + links[banner]
+        }
+
+        function ShowBanners() {
+            if (document.images) {
+                banner++
+                if (banner == slide_images.length) {
+                    banner = 0
+                }
+                document.ChangeBanner.src = slide_images[banner];
+                document.getElementById('title').innerText = title[banner];
+                document.getElementById('links').href = links[banner];
+                setTimeout("ShowBanners()", 5000);
+            }
+        }
+    </script>
+</head>
+
+<body onload="ShowBanners()">
+
+    <div class="header">
+        <div class="brand">
+            <a href="#home" class="logo"><img src="../../resource/image/logo_gold.png"></a>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="nav-menu">
+            <li><a href="#podcust">Podcast</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#ideass">Ideas</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="auth/register.html">Register</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <div class="wrapper">
+        <script>
+            console.log(document.images);
+        </script>
+        <div class="main-content">
+            <div class="content">
+                <div class="slider-wrappeer">
+                    <div class="slide-image">
+                        <a href="articles.html" id="links">
+                            <img src="../../resource/image/banners/life1.jpg" width="100%" height="auto"
+                                name="ChangeBanner" /></a>
+                    </div>
+                    <div class="title" id="title">first title</div>
+                </div>
+
+                <div class="card_wrapper">
+                    <h3 class="section_heading">Biographies </h3>
+
+                    <div class="cards">
+                        <div class="card">
+                            <img src="../../resource/image/kitaw-ejigu.jpg" alt="Avatar" style="width:100%">
+                            <div class="card-body">
+                                <h4><b>Kitaw Ejigu</b></h4>
+                                <p>Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards">
+                        <div class="card">
+                            <img src="../../resource/image/jeff_bezos.jpg" alt="Avatar" style="width:100%">
+                            <div class="card-body">
+                                <h4><b>Jeff Bezos</b></h4>
+                                <p>Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards">
+                        <div class="card">
+                            <img src="../../resource/image/bethlehem_alemu.jpg" alt="Avatar" style="width:100%">
+                            <div class="card-body">
+                                <h4><b>Bethelhem Alemu</b></h4>
+                                <p>Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2> Student Questions After Class</h2>
+                <div id="mybox" style="height: 100px; width: 400px; border: 1px solid; overflow: hidden;">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat excepturi maxime expedita facilis
+                    molestias repellendus voluptate assumenda neque tempora, ex, libero reprehenderit obcaecati quis hic
+                    numquam fugit similique necessitatibus quidem!
+                </div>
+                <br>
+                <button onclick="visiblityToggle()" id="mybutton">Overflow scroll</button>
+                <script>
+                    var hidden = true;
+                    function visiblityToggle() {
+                        if (hidden) {
+                            hidden = false;
+                            document.getElementById("mybox").style.overflowY = "scroll";
+                            document.getElementById("mybutton").innerText = "Hide Overflow";
+                        }else{
+                            hidden = true;
+                            document.getElementById("mybox").style.overflow = "hidden";
+                            document.getElementById("mybutton").innerText = "Overflow scroll"; 
+                        }
+
+                    }
+                </script>
+
+                <br>
+                <br>
+               <b>A student also asked</b>  how to use success or error icons during form validation. Please check  <a href="https://www.freecodecamp.org/news/learn-javascript-form-validation-by-making-a-form/">this link</a>
+                , here you need to use font-awesom icons or find other option like svg, small image icon....
+
+                <h3 class="section_heading">New Podcast</h3>
+                <h1>Jack Ma - How I Overcame Failure </h1>
+                <audio controls>
+                    <source src="../../resource/audio/Jack Ma - How I Overcame Failure.mp3" type="audio/mp3">
+                    Something is wrong, uable to load this audio
+                </audio>
+
+                <h3 class="section_heading">Pick of The Week</h3>
+                <h1>24 Hours A Day</h1>
+                <video controls src="../../resource/video/24_HOURS.mp4" width="100%"></video>
+            </div>
+            <div class="side-bar">
+                <!-- Sidebar -->
+                <h2> Recent Posts</h2>
+                <ul>
+                    <li>
+                        <h3>Articles</h3>
+                        <ul>
+                            <li>The Importance of Goals, Especially During Difficult Times</li>
+                            <li>5 Steps to Discovering Your Life Purpose In 2022!</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Ideas</h3>
+                        <ul>
+                            <li>10 Books to Read in The Fall</li>
+                            <li>Top Web Development Projects Ideas</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2>Most Viewed Articls</h2>
+                <ol type="I">
+                    <li>Instant Gratification Is Stopping You From Reaching Your Goals!
+
+                        li>
+                    <li>Stop Juggling Between Work And Life</li>
+                </ol>
+                <h2>IP Project Winners</h2>
+                <pre>
+----------------------------------
+Rank    Award
+----------------------------------
+First   Free hosting and support
+Second  5GB Mobile Data
+Third   1GB Mobile Data
+---------------------------------- 
+               </pre>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p>All rights reserved &copy; 2014 EC AASTU Software Engineering Students</p>
+    </div>
+</body>
+
+</html>
